@@ -4,8 +4,8 @@
         <v-app-bar flat app>
             <v-app-bar-nav-icon class="grey--text" @click="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title class="text-uppercase grey--text">
-                <span class="font-weight-light">Todo</span>
-                <span>Ninja</span>
+                <span class="font-weight-light">Bruti</span>
+                <span>ful</span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn flat color="grey">
@@ -17,11 +17,13 @@
         <v-navigation-drawer app v-model="drawer" class="purple lighten-3">
 
             <v-list rounded>
-                <v-subheader>REPORTS</v-subheader>
+                <v-subheader>Brutiful</v-subheader>
                 <v-list-item-group v-model="item" color="primary">
                     <v-list-item
                             v-for="(item, i) in items"
                             :key="i"
+                            router :to="item.route"
+
                     >
                         <v-list-item-icon>
                             <v-icon v-text="item.icon"></v-icon>
@@ -44,50 +46,14 @@
         data() {
             return {
                 drawer: false,
+                item: 1,
                 items: [
-                    {
-                        action: 'mdi-local_act',
-                        title: 'Календарь',
-                        route: '/calendar',
-                        active: true,
-                        items: [
-                            { title: 'Breakfast & brunch' },
-                            { title: 'New American' },
-                            { title: 'Sushi' },
-                        ],
-                    },
-                    {
-                        action: 'mdi-school',
-                        title: 'Планировщик',
-                        route: '/scheduler',
-                        items: [
-                            { title: 'List Item' },
-                        ],
-                    },
-                    {
-                        action: 'mdi-directions_run',
-                        title: 'Статистика',
-                        route: '/statistic',
-                        items: [
-                            { title: 'List Item' },
-                        ],
-                    },
-                    {
-                        action: 'mdi-healing',
-                        title: 'Заявки',
-                        route: '/bids',
-                        items: [
-                            { title: 'List Item' },
-                        ],
-                    },
-                    {
-                        action: 'mdi-content_cut',
-                        title: 'Баланс',
-                        route: '/balance',
-                        items: [
-                            { title: 'List Item' },
-                        ],
-                    },
+                    { text: 'Profile', icon: 'mdi-clock', route: '/profile'},
+                    { text: 'Calendar', icon: 'mdi-account', route: '/' },
+                    { text: 'Scheduler', icon: 'mdi-flag', route: '/scheduler' },
+                    { text: 'Bids', icon: 'mdi-bid',route: '/bids' },
+                    { text: 'Statistic', icon: 'mdi-statistic', route: '/statistic' },
+                    { text: 'Balance', icon: 'mdi-balance', route: '/balance' },
                 ],
             }
         }
