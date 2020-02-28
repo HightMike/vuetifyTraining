@@ -14,10 +14,10 @@
             </v-btn>
         </v-app-bar>
 
-        <v-navigation-drawer app v-model="drawer" class="purple lighten-3">
+        <v-navigation-drawer app v-model="drawer" class="green darken-3">
 
             <v-list rounded>
-                <v-subheader>Brutiful</v-subheader>
+                <v-subheader class="white--text">Brutiful</v-subheader>
                 <v-list-item-group v-model="item" color="primary">
                     <v-list-item
                             v-for="(item, i) in items"
@@ -26,10 +26,10 @@
 
                     >
                         <v-list-item-icon>
-                            <v-icon v-text="item.icon"></v-icon>
+                            <v-icon class="white--text" v-text="item.icon"></v-icon>
                         </v-list-item-icon>
                         <v-list-item-content>
-                            <v-list-item-title v-text="item.text"></v-list-item-title>
+                            <v-list-item-title class="white--text" v-text="item.text"></v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
                 </v-list-item-group>
@@ -42,18 +42,27 @@
 </template>
 
 <script>
+    import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
+
+    // import { mdiAlarm } from '@mdi/js';
+    import { mdiAccountMultiple } from '@mdi/js';
+    import { mdiCalendarMonth } from '@mdi/js';
+    import { mdiCalendarText } from '@mdi/js';
+    import { mdiFileCancelOutline } from '@mdi/js';
+    import { mdiGraphOutline } from '@mdi/js';
+    import { mdiCashUsdOutline } from '@mdi/js';
     export default {
         data() {
             return {
                 drawer: false,
                 item: 1,
                 items: [
-                    { text: 'Profile', icon: 'mdi-clock', route: '/profile'},
-                    { text: 'Calendar', icon: 'mdi-account', route: '/' },
-                    { text: 'Scheduler', icon: 'mdi-flag', route: '/scheduler' },
-                    { text: 'Bids', icon: 'mdi-bid',route: '/bids' },
-                    { text: 'Statistic', icon: 'mdi-statistic', route: '/statistic' },
-                    { text: 'Balance', icon: 'mdi-balance', route: '/balance' },
+                    { text: 'Profile', icon: mdiAccountMultiple, route: '/profile'},
+                    { text: 'Calendar', icon: mdiCalendarMonth, route: '/' },
+                    { text: 'Scheduler', icon: mdiCalendarText, route: '/scheduler' },
+                    { text: 'Bids', icon: mdiFileCancelOutline,route: '/bids' },
+                    { text: 'Statistic', icon: mdiGraphOutline, route: '/statistic' },
+                    { text: 'Balance', icon: mdiCashUsdOutline, route: '/balance' },
                 ],
             }
         }
