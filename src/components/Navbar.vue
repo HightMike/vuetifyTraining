@@ -42,9 +42,6 @@
 </template>
 
 <script>
-    import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
-
-    // import { mdiAlarm } from '@mdi/js';
     import { mdiAccountMultiple } from '@mdi/js';
     import { mdiCalendarMonth } from '@mdi/js';
     import { mdiCalendarText } from '@mdi/js';
