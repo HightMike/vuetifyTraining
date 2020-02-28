@@ -1,29 +1,51 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Balance from '../views/Balance.vue'
+import Bids from '../views/Bids.vue'
+import Calendar from '../views/Calendar.vue'
+import Profile from '../views/Profile.vue'
+import Scheduler from '../views/Scheduler.vue'
+import Statistic from '../views/Statistic.vue'
+
+
+
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
 
-const router = new VueRouter({
+export default new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes: [
+    {
+      path: '/balance',
+      name: 'balance',
+      component: Balance
+    },
+    {
+      path: '/bids',
+      name: 'bids',
+      component: Bids
+    },
+    {
+      path: '/',
+      name: 'calendar',
+      component: Calendar
+    },
+    {
+      path: '/profile',
+      name: 'Profile',
+      component: Profile
+    },
+    {
+      path: '/scheduler',
+      name: 'scheduler',
+      component: Scheduler
+    },
+    {
+      path: '/statistic',
+      name: 'statistic',
+      component: Statistic
+    },
+  ]
 })
-
-export default router

@@ -1,5 +1,7 @@
 <template>
-    
+    <div class="balance">
+        <h1>Balance</h1>
+    </div>
 </template>
 
 <script>

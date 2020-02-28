@@ -16,30 +16,21 @@
 
         <v-navigation-drawer app v-model="drawer" class="purple lighten-3">
 
-            <v-list>
-                <v-list-group
-                        v-for="item in items"
-                        :key="item.title"
-                        v-model="item.active"
-                        :prepend-icon="item.action"
-                        no-action
-                >
-                    <template v-slot:activator>
-                        <v-list-item-content>
-                            <v-list-item-title v-text="item.title"></v-list-item-title>
-                        </v-list-item-content>
-                    </template>
-
+            <v-list rounded>
+                <v-subheader>REPORTS</v-subheader>
+                <v-list-item-group v-model="item" color="primary">
                     <v-list-item
-                            v-for="subItem in item.items"
-                            :key="subItem.title"
-                            click=""
+                            v-for="(item, i) in items"
+                            :key="i"
                     >
+                        <v-list-item-icon>
+                            <v-icon v-text="item.icon"></v-icon>
+                        </v-list-item-icon>
                         <v-list-item-content>
-                            <v-list-item-title v-text="subItem.title"></v-list-item-title>
+                            <v-list-item-title v-text="item.text"></v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
-                </v-list-group>
+                </v-list-item-group>
             </v-list>
 
 
@@ -55,15 +46,9 @@
                 drawer: false,
                 items: [
                     {
-                        action: 'mdi-local_activity',
-                        title: 'Личный кабинет',
-                        items: [
-                            { title: 'List Item' },
-                        ],
-                    },
-                    {
-                        action: 'mdi-restaurant',
+                        action: 'mdi-local_act',
                         title: 'Календарь',
+                        route: '/calendar',
                         active: true,
                         items: [
                             { title: 'Breakfast & brunch' },
@@ -74,6 +59,7 @@
                     {
                         action: 'mdi-school',
                         title: 'Планировщик',
+                        route: '/scheduler',
                         items: [
                             { title: 'List Item' },
                         ],
@@ -81,6 +67,7 @@
                     {
                         action: 'mdi-directions_run',
                         title: 'Статистика',
+                        route: '/statistic',
                         items: [
                             { title: 'List Item' },
                         ],
@@ -88,6 +75,7 @@
                     {
                         action: 'mdi-healing',
                         title: 'Заявки',
+                        route: '/bids',
                         items: [
                             { title: 'List Item' },
                         ],
@@ -95,6 +83,7 @@
                     {
                         action: 'mdi-content_cut',
                         title: 'Баланс',
+                        route: '/balance',
                         items: [
                             { title: 'List Item' },
                         ],
