@@ -1,7 +1,8 @@
 <template>
   <v-app>
-    <cNavbar/>
-    <secondNavbar/>
+<!--    <cNavbar/>-->
+<!--    <secondNavbar/>-->
+    <Navbar></Navbar>
     <v-content>
       <router-view></router-view>
     </v-content>
@@ -11,14 +12,16 @@
 <script>
 
   // import Navbar from '@/components/Navbar'
-  import cNavbar from '@/components/cNavbar'
-  import secondNavbar from '@/components/secondNavbar'
+  // import cNavbar from '@/components/cNavbar'
+  // import secondNavbar from '@/components/secondNavbar'
+  import Navbar from '@/components/Navbar'
 
 
   export default {
   components :{
-    cNavbar,
-    secondNavbar
+    // cNavbar,
+    // secondNavbar,
+    Navbar
   },
   name:'App',
   data() {
