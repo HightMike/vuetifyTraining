@@ -6,6 +6,7 @@ import Calendar from '../views/Calendar.vue'
 import Profile from '../views/Profile.vue'
 import Scheduler from '../views/Scheduler.vue'
 import Statistic from '../views/Statistic.vue'
+import Setting from '../views/Setting.vue'
 
 
 
@@ -46,6 +47,11 @@ export default new VueRouter({
       path: '/statistic',
       name: 'statistic',
       component: Statistic
+    },
+    {
+      path: '/setting',
+      name: 'setting',
+      component: Setting
     },
   ]
 })

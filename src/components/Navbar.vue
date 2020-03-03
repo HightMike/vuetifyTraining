@@ -19,19 +19,35 @@
             <v-list rounded>
                 <v-subheader class="white--text">Brutiful</v-subheader>
                 <v-list-item-group v-model="item" color="primary">
-                    <v-list-item
+                    <v-list-group
                             v-for="(item, i) in items"
                             :key="i"
                             router :to="item.route"
-
+                            no-action
                     >
-                        <v-list-item-icon>
-                            <v-icon class="white--text" v-text="item.icon"></v-icon>
-                        </v-list-item-icon>
+
+                        <template v-slot:activator>
+                            <v-list-item-icon>
+                                <v-icon class="white--text" v-text="item.icon"></v-icon>
+                            </v-list-item-icon>
+
+                            <v-list-item-content>
+                                <v-list-item-title class="white--text" v-text="item.text"></v-list-item-title>
+                            </v-list-item-content>
+                        </template>
+
+
+
+                    <v-list-item
+                            v-for="subItem in item.subset"
+                            :key="subItem.title"
+                    >
                         <v-list-item-content>
-                            <v-list-item-title class="white--text" v-text="item.text"></v-list-item-title>
+                            <v-list-item-title class="white--text" v-text="subItem.title"></v-list-item-title>
                         </v-list-item-content>
+
                     </v-list-item>
+                    </v-list-group>
                 </v-list-item-group>
             </v-list>
 
@@ -48,6 +64,7 @@
     import { mdiFileCancelOutline } from '@mdi/js';
     import { mdiGraphOutline } from '@mdi/js';
     import { mdiCashUsdOutline } from '@mdi/js';
+    import { mdiCogs } from '@mdi/js';
     export default {
         data() {
             return {
@@ -55,6 +72,17 @@
                 item: 1,
                 items: [
                     { text: 'Profile', icon: mdiAccountMultiple, route: '/profile'},
+                    { text: 'Setting',
+                        icon: mdiCogs,
+                        route: '/setting',
+                        subset: [
+                            { title: 'График работы' },
+                            { title: 'Услуги' },
+                            { title: 'Сотрудники' },
+                            { title: 'Основное' },
+                            { title: 'Пользователи' },
+                        ]
+                    },
                     { text: 'Calendar', icon: mdiCalendarMonth, route: '/' },
                     { text: 'Scheduler', icon: mdiCalendarText, route: '/scheduler' },
                     { text: 'Bids', icon: mdiFileCancelOutline,route: '/bids' },
