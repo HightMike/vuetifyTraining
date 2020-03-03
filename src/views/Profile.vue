@@ -1,6 +1,6 @@
 <template>
     <div class="profile">
-        <h1>Profle</h1>
+        <h1 class="subheading grey--text">Profle</h1>
     </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <div class="bids">
-        <h1>Bids</h1>
+        <h1 class="subheading grey--text">Bids</h1>
     </div>
 </template>
 

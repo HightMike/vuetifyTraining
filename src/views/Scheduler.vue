@@ -1,6 +1,6 @@
 <template>
     <div class="scheduler">
-        <h1>Scheduler</h1>
+        <h1 class="subheading grey--text">Scheduler</h1>
     </div>
 </template>
 

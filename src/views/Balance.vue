@@ -1,6 +1,6 @@
 <template>
     <div class="balance">
-        <h1>Balance</h1>
+        <h1 class="subheading grey--text">Balance</h1>
     </div>
 </template>
 
